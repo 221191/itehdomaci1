@@ -42,9 +42,9 @@
                     <?php endwhile; ?>
                 </select>
             </div>
-
-            <button type="button" id="btn_add">Sačuvaj</button>
-            <button type="button" id="btn_update">Izmeni</button>
+            
+            <button id="btn_add">Sačuvaj</button>
+            <button id="btn_update">Izmeni</button>
 
         </form>
     </div>
