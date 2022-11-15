@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script type="text/javascript" src="script.js"></script>
     <title>Pozoriste</title>
 </head>
 <body>
@@ -11,7 +13,7 @@
 
 <div class="forma">
 
-    <div >
+    <div>
         <h2>Glumac</h2>
         <form action="">
 
@@ -49,9 +51,16 @@
         </form>
     </div>
 
+    <div class="tabela">
+
+            <h4 style="margin-top:20px;">Pretraga: </h4>
+            <input type="text" id="searchinput">
+
+            <div id="table">
+
+            </div>
+        </div>
 </div>
-
-
 
 
 </body>
