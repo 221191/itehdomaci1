@@ -2,6 +2,9 @@ $(document).ready(function () {
     vratiSveGlumce();
     dodajNovogGlumca();
     obrisiGlumca();
+    popuniFormu();
+    sacuvajIzmenjenogGlumca();
+    pretraziGlumce();
 })
 
 function vratiSveGlumce() {
@@ -64,5 +67,72 @@ function obrisiGlumca() {
                 vratiSveGlumce();
             }
         })
+    })
+}
+
+function popuniFormu() {
+
+    $(document).on('click', '#btn_edit', function () {
+
+        var id = $(this).attr('value');
+
+        $.ajax({
+            url: 'edit.php',
+            method: 'post',
+            data: { id: id },
+            dataType: 'json',
+            success: function (data) {
+                $('#hiddenid').val(data.id);
+                $('#ime').val(data.ime);
+                $('#prezime').val(data.prezime);
+                $('#predstava').val(data.predstava_id);
+                $('#btn_add').hide();
+                $('#btn_update').show();
+            }
+        })
+    })
+}
+
+function sacuvajIzmenjenogGlumca() {
+
+    $(document).on('click', '#btn_update', function () {
+
+        let id = $('#hiddenid').val();
+        let ime = $('#ime').val();
+        let prezime = $('#prezime').val();
+        let predstava_id = $('#predstava').val();
+
+        $.ajax({
+            url: 'update.php',
+            method: 'post',
+            data: { id: id, ime: ime, prezime: prezime, predstava_id: predstava_id },
+
+            success: function (data) {
+                alert(data);
+                vratiSveGlumce();
+            }
+        })
+
+    })
+}
+
+function pretraziGlumce() {
+
+    $(document).on('keyup', '#searchinput', function () {
+
+        let input = this.value;
+
+        $.ajax(
+            {
+                url: 'getallSearch.php',
+                method: 'post',
+                data: { input: input },
+                success: function (data) {
+                    {
+                        $('#table').html(data);
+                    }
+                }
+            }
+        )
     })
 }
