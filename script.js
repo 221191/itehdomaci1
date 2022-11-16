@@ -1,6 +1,7 @@
 $(document).ready(function () {
     vratiSveGlumce();
     dodajNovogGlumca();
+    obrisiGlumca();
 })
 
 function vratiSveGlumce() {
@@ -47,3 +48,21 @@ function dodajNovogGlumca() {
 
 }
 
+function obrisiGlumca() {
+
+    $(document).on('click', '#btn_delete', function () {
+
+        var id = $(this).attr('value');
+
+        $.ajax({
+            url: 'delete.php',
+            method: 'post',
+            data: { id: id },
+
+            success: function (data) {
+                alert(data);
+                vratiSveGlumce();
+            }
+        })
+    })
+}
