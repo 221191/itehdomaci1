@@ -5,6 +5,7 @@ $(document).ready(function () {
     popuniFormu();
     sacuvajIzmenjenogGlumca();
     pretraziGlumce();
+    sortirajGlumce();
 })
 
 function vratiSveGlumce() {
@@ -136,3 +137,30 @@ function pretraziGlumce() {
         )
     })
 }
+
+function sortirajGlumce() {
+
+    $(document).on('click', 'th', function () {
+
+        let id = $(this).attr('id');
+        let poredak = $(this).attr('value');
+
+
+        if (id == 'akcija') {
+            alert('Ova kolona se ne moze sortirati!');
+            return;
+        }
+
+        $.ajax({
+            url: 'getallSort.php',
+            method: 'post',
+            data: { id: id, poredak: poredak },
+
+            success: function (data) {
+                $('#table').html(data);
+            }
+        })
+
+    })
+}
+
