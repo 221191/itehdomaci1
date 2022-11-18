@@ -4,12 +4,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/style.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
     <script type="text/javascript" src="script.js"></script>
     <title>Pozoriste</title>
 </head>
 <body>
-<div class="container">
 
 <div class="forma">
 
@@ -19,17 +19,19 @@
 
             <hidden id="hiddenid" value=""></hidden>
 
-            <div>
-                <label for="ime">Ime: </label>
-                <input type="text" id="ime" name="ime">
+            <div class="brise-input">
+                <input type="text" id="ime" name="ime" required>
+                <label for="ime">Ime</label>
+                <span class="line"></span>
             </div>
-            <div>
-                <label for="prezime">Prezime: </label>
-                <input type="text" id="prezime" name="prezime">
+            <div class="brise-input">
+                <input type="text" id="prezime" name="prezime" required>
+                <label for="prezime">Prezime</label>
+                <span class="line"></span>
             </div>
-            <div>
+            <div class="izbor select">
                 <label for="predstava">Predstava: </label>
-                <select name="predstava" id="predstava">
+                <select name="predstava" id="predstava" id="format">
                     <?php
 
                     include 'Database.php';
@@ -45,8 +47,8 @@
                 </select>
             </div>
             
-            <button id="btn_add">Sačuvaj</button>
-            <button id="btn_update">Izmeni</button>
+            <button id="btn_add" class="btn btn-4 hover-border-6"><span>Sacuvaj</span></button>
+            <button id="btn_update" class="btn btn-4 hover-border-6"><span>Izmeni</span></button>
 
         </form>
     </div>

@@ -1,0 +1,239 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+    background-color: #d9d9d9;
+}
+
+.forma {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 50px;
+    margin-top: 200px;
+}
+
+h2{
+    font-size: 2rem;
+}
+
+.brise-input {
+    width: 300px;
+    position: relative;
+    margin: 5px;
+    overflow: hidden;
+    padding-top: 15px;
+}
+
+.brise-input input {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    outline: none;
+    border-bottom: 1px solid #999;
+    box-sizing: border-box;
+    font-size: 16px;
+    position: relative;
+    z-index: 5;
+    background: none;
+}
+
+.brise-input input:focus~label,
+input:valid~label {
+    top: 0px;
+    transform: scale(0.94) translateX(-2px);
+    color: #4485c5;
+}
+
+.brise-input .line {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background: #4485c5;
+    left: -999px;
+    transition: .25s;
+    opacity: 0;
+    z-index: 6;
+}
+
+.brise-input input:focus~.line {
+    left: 0;
+    opacity: 1;
+}
+
+.brise-input label {
+    position: absolute;
+    left: 10px;
+    top: 45%;
+    transition: ease-out .15s;
+    color: #999;
+}
+
+.izbor {
+    display: flex;
+    margin: 50px 0;
+}
+
+/* sacuvaj i izmeni btn */
+:active,
+:hover,
+:focus {
+    outline: 0 !important;
+    outline-offset: 0;
+}
+
+::before,
+::after {
+    position: absolute;
+    content: "";
+}
+
+.btn {
+    position: relative;
+    display: inline-block;
+    width: auto;
+    height: auto;
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    margin: 0px 25px 15px;
+    width: 200px;
+}
+
+.btn span {
+    position: relative;
+    display: inline-block;
+    font-size: 14px;
+    font-weight: bold;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 15px 20px;
+    transition: 0.3s;
+}
+
+
+.btn-4 span {
+    color: rgb(28, 31, 30);
+    background-color: rgb(245, 245, 245);
+}
+
+.btn-4 span:hover {
+    color: rgb(54, 56, 55);
+}
+
+.btn-4::before,
+.btn-4::after {
+    width: 15%;
+    height: 2px;
+    background-color: rgb(54, 56, 55);
+    z-index: 2;
+}
+
+
+.btn.hover-border-6::before,
+.btn.hover-border-6::after {
+    top: 0;
+    transition: width 0.2s 0.35s ease-out;
+}
+
+.btn.hover-border-6::before {
+    right: 50%;
+}
+
+.btn.hover-border-6::after {
+    left: 50%;
+}
+
+.btn.hover-border-6:hover::before,
+.btn.hover-border-6:hover::after {
+    width: 50%;
+    transition: width 0.2s ease-in;
+}
+
+.btn.hover-border-6 span::before,
+.btn.hover-border-6 span::after {
+    width: 0%;
+    height: 0%;
+    background: transparent;
+    opacity: 0;
+    z-index: 2;
+    transition: width 0.2s ease-in, height 0.15s 0.2s linear, opacity 0s 0.35s;
+}
+
+.btn.hover-border-6 span::before {
+    top: 0;
+    left: 0;
+    border-left: 2px solid rgb(54, 56, 55);
+    border-bottom: 2px solid rgb(54, 56, 55);
+}
+
+.btn.hover-border-6 span::after {
+    top: 0;
+    right: 0;
+    border-right: 2px solid rgb(54, 56, 55);
+    border-bottom: 2px solid rgb(54, 56, 55);
+}
+
+.btn.hover-border-6 span:hover::before,
+.btn.hover-border-6 span:hover::after {
+    width: 50%;
+    height: 96%;
+    opacity: 1;
+    transition: height 0.2s 0.2s ease-in, width 0.2s 0.4s linear, opacity 0s 0.2s;
+}
+
+/* select option */
+select {
+    display: block;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: #5c6664;
+    background-image: none;
+    flex: 1;
+    padding: 0 .5em;
+    color: #fff;
+    cursor: pointer;
+    font-size: 1em;
+    font-family: 'Open Sans', sans-serif;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+.select {
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    line-height: 3;
+    background: #5c6664;
+    overflow: hidden;
+    border-radius: .25em;
+}
+
+.select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    background: #2b2e2e;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+}
+
+.select:hover::after {
+    color: #23b499;
+}
