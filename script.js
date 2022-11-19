@@ -119,7 +119,7 @@ function sacuvajIzmenjenogGlumca() {
 
 function pretraziGlumce() {
 
-    $(document).on('keyup', '#searchinput', function () {
+    $(document).on('keydown', '#searchinput', function () {
 
         let input = this.value;
 

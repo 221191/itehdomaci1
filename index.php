@@ -56,7 +56,7 @@
     <div class="tabela">
 
             <h4 style="margin-top:20px;">Pretraga: </h4>
-            <input type="text" id="searchinput">
+            <input type="text" id="searchinput" class="pretraga">
 
             <div id="table">
 
